@@ -16,7 +16,7 @@ class Usuario extends CI_Controller{
 
 		$this->usuario->inserir();
 		//redirect(site_url("usuario/index"));
-		redirect('/');
+		redirect();
 	}	
 
 	public function adicionar(){

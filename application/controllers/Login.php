@@ -16,8 +16,26 @@ class Login extends CI_Controller{
         } else {
             $this->session->set_flashdata("danger", "Usuario ou senha inválidos");
         }
-        redirect();
+        redirect('/');
     }
+
+    public function home()
+{
+    //$data['level'] = $this->session->userdata('level_id');
+    $data['nome'] = $this->session->userdata('nome');
+    //$data['email'] = $this->session->userdata('email');
+    $data['codigo'] = $this->session->userdata('cod_usuario');
+
+    if($data['level'] == 1){
+        redirect('admin');
+    }
+    else if($data['level'] == 2){
+        redirect('kuesioner/submited'); 
+    }
+    /*else{
+         redirect('sub_unit/home');
+    }*/
+}
 }
 
 ?>

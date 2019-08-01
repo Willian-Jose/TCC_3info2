@@ -5,6 +5,8 @@
 </head>
 <body>
 <div class="container">
+<?= ($_SESSION['usuario_logado']['cod_usuario']); ?>
+<?= print_r($this->session->userdata('usuario_logado','cod_usuario')); ?>
 
     <?php if($this->session->flashdata("success")) : ?>
     <p class="alert alert-success"><?= $this->session->flashdata("success") ?></p>

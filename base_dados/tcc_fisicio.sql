@@ -41,8 +41,7 @@ lugar varchar(30) NOT NULL,
 regente varchar(30) NOT NULL,
 dia_grupo varchar(10) NOT NULL,
 materia_grupo varchar(30) NOT NULL,
-desc_grupo varchar(30),
-CONSTRAINT fk_grupo_cod_usuario FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario)
+desc_grupo varchar(30)
 );
 
 CREATE TABLE turma (

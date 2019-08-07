@@ -11,4 +11,14 @@ class Usuario extends CI_Controller{
         
         $this->grupo->inserir();
     }
+
+    public function index(){
+		//busca os dados do banco pela model
+		$resultado = $this->grupo->obterTodos();
+		$vetor['grupos'] = $resultado;
+		$vetor['titulo'] = "Grupos de Estudo";
+		$this->load->view("usuario/lista", $vetor);	
+	}
+
+    
 }

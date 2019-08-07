@@ -9,4 +9,7 @@ class Grupo_model extends CI_Model{
 	var $materia_grupo;
 	var $desc_grupo;
 
-	
+	public function obterTodos(){
+		return $this->db->get("grupo")->result();	
+	}
+}

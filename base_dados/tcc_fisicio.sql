@@ -36,12 +36,11 @@ nome_curso varchar(30) NOT NULL
 
 CREATE TABLE grupo (
 cod_grupo int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-cod_usuario int,
 lugar varchar(30) NOT NULL,
 regente varchar(30) NOT NULL,
 dia_grupo varchar(10) NOT NULL,
 materia_grupo varchar(30) NOT NULL,
-desc_grupo varchar(30)
+desc_grupo varchar(60)
 );
 
 CREATE TABLE turma (

@@ -5,6 +5,7 @@
 	<title></title>
 </head>
 <body>
+	<p><?= ($_SESSION['usuario_logado']['cod_usuario']); ?></p>
 	<h1><?php echo $titulo; ?></h1>
 	<hr />
 	<table border="1" width="100%">
@@ -14,6 +15,7 @@
 		<td>Dia</td>
 		<td>Matéria</td>
 		<td>Descrição</td>
+		<td>Inscreva-se</td>
 	</tr>
 	<?php 
 
@@ -24,6 +26,8 @@
 				echo "<td>$grupo->dia_grupo</td>";
 				echo "<td>$grupo->materia_grupo</td>";
 				echo "<td>$grupo->desc_grupo</td>";
+				echo "<td>"
+					."<a href='". site_url("usuario/form_edit/$usuario->cod_usuario") ."'>Clique aqui</a>";
 				echo "</tr>";
 			}
 

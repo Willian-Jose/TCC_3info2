@@ -1,6 +1,6 @@
 <?php
 
-class Usuario extends CI_Controller{
+class Grupo extends CI_Controller{
 
 	public function __construct(){
 		parent::__construct();
@@ -17,7 +17,7 @@ class Usuario extends CI_Controller{
 		$resultado = $this->grupo->obterTodos();
 		$vetor['grupos'] = $resultado;
 		$vetor['titulo'] = "Grupos de Estudo";
-		$this->load->view("usuario/lista", $vetor);	
+		$this->load->view("grupo/lista_grupo", $vetor);	
 	}
 
     

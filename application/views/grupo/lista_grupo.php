@@ -5,7 +5,6 @@
 	<title></title>
 </head>
 <body>
-	<p><?= ($_SESSION['usuario_logado']['cod_usuario']); ?></p>
 	<h1><?php echo $titulo; ?></h1>
 	<hr />
 	<table border="1" width="100%">

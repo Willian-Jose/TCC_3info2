@@ -27,7 +27,7 @@
 				echo "<td>$grupo->materia_grupo</td>";
 				echo "<td>$grupo->desc_grupo</td>";
 				echo "<td>"
-					."<a href='". site_url("usuario/form_edit/$usuario->cod_usuario") ."'>Clique aqui</a>";
+					."<a href='". site_url("membro_grupo/entrar/$grupo->cod_grupo") ."'>Entrar</a>";
 				echo "</tr>";
 			}
 

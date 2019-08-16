@@ -14,4 +14,11 @@ class Membro_grupo extends CI_Controller{
 		redirect(site_url("grupo/index"));
 	}
 
+    public function verificaEntrada(){
+    	$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
+    	$resultado = $this->grupo->verificaParticipante($codigo_user);
+    	return $resultado;	
+    }
+	
+
 }

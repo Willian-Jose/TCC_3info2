@@ -9,6 +9,10 @@ class Membro_grupo_model extends CI_Model{
 		$this->cod_grupo = $codigo_grupo;
 		$this->cod_usuario = $cod_usuario;
 		$this->db->insert("membro_grupo", $this);
-		
+	}
+
+	public function verificaParticipante($codigo_user){
+		$this->db->where('cod_usuario', $codigo_user);
+		return $this->db->get('membro_grupo');
 	}
 }

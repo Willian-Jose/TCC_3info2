@@ -25,7 +25,7 @@
 				echo "<td>$grupo->dia_grupo</td>";
 				echo "<td>$grupo->materia_grupo</td>";
 				echo "<td>$grupo->desc_grupo</td>";
-				echo "<td>"
+				echo "<td>".$grupo->verificaParticipante($_SESSION['usuario_logado']['cod_usuario'])
 					."<a href='". site_url("membro_grupo/entrar/$grupo->cod_grupo") ."'>Entrar</a>";
 				echo "</tr>";
 			}

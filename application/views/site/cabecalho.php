@@ -15,7 +15,7 @@
 	            <ul>
 	           	   	<li><a href="index.php">Início</a></li>
 	               	<li><a href="atividades.php">Atividades</a></li>
-	                <li><?= anchor('Grupo/index', 'Grupos', 'title="News title"'); ?></li>
+	                <li><?= anchor('Grupo/index', 'Grupos', 'title="Grupos"'); ?></li>
 	                <li><a href="perfil.php">Perfil</a></li>
 	                <li><a href="cadastrar.php">Cadastro</a></li>
 	                <li style="float: right;"><a href="login.php">Login</a></li>

@@ -6,14 +6,16 @@ class Grupo extends CI_Controller{
 		parent::__construct();
 		$this->load->model("grupo_model", "grupo");
 		$this->load->model("Membro_grupo_model", "grupo2");
-    }
-
-    public function entrar(){
-        
-        $this->grupo->inserir();
-    }
+	}
+	
+	public function verificaEntrada(){
+    	$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
+    	$resultado = $this->grupo2->verificaParticipante($codigo_user);
+    	return $resultado;	
+	}
 
     public function index(){
+		$vetor['teste'] = $this->grupo2->verificaParticipante($_SESSION['usuario_logado']['cod_usuario']);
 		//busca os dados do banco pela model
 		$resultado = $this->grupo->obterTodos();
 		$vetor['grupos'] = $resultado;
@@ -21,18 +23,11 @@ class Grupo extends CI_Controller{
 		$this->load->view("grupo/lista_grupo", $vetor);	
 	}
 
-	public function entrar_grupo($codigo_grupo){
+	public function entrar($codigo_grupo){
 		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
 		$this->grupo2->inserir($codigo_grupo, $codigo_user);
 		echo  $this->db->last_query();
 		redirect(site_url("grupo/index"));
 	}
 
-    public function verificaEntrada(){
-    	$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
-    	$resultado = $this->grupo2->verificaParticipante($codigo_user);
-    	return $resultado;	
-	}
-
-    
 }

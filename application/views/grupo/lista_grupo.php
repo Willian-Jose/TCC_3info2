@@ -16,8 +16,8 @@
 		<td>Descrição</td>
 		<td>Inscreva-se</td>
 	</tr>
+	<?php print_r($teste); ?>
 	<?php 
-
 			foreach ($grupos as $grupo) {
 				echo "<tr>";
 				echo "<td>$grupo->lugar</td>";
@@ -25,11 +25,11 @@
 				echo "<td>$grupo->dia_grupo</td>";
 				echo "<td>$grupo->materia_grupo</td>";
 				echo "<td>$grupo->desc_grupo</td>";
-				echo "<td>"//$grupo2->verificaParticipante($_SESSION['usuario_logado']['cod_usuario'])
-					."<a href='". site_url("membro_grupo/entrar/$grupo->cod_grupo") ."'>Entrar</a>";
+				echo "<td>".
+					"<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>Entrar</a>";
 				echo "</tr>";
 			}
-
+			
 	?>
 	</table>
 </body>

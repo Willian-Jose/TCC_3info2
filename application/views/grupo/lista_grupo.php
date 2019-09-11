@@ -17,7 +17,6 @@
 		<td>Inscreva-se</td>
 	</tr>
 	<?php 
-			print_r($teste);
 			foreach ($grupos as $grupo) {
 				echo "<tr>";
 				echo "<td>$grupo->lugar</td>";
@@ -25,7 +24,7 @@
 				echo "<td>$grupo->dia_grupo</td>";
 				echo "<td>$grupo->materia_grupo</td>";
 				echo "<td>$grupo->desc_grupo</td>"; 
-				if ($vetor['entrada']==0) {
+				if ($vetor['entrada']== NULL) {
 					echo "<td>".
 					"<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>Entrar</a>"."</td>";
 				}else{

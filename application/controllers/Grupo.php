@@ -33,7 +33,8 @@ class Grupo extends CI_Controller{
 
 	public function Entrada_Saida($codigo_user){
 		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
-		$this->grupo2->taDentro($cod_usuario,$codigo_grupo);
+		$resultado = $this->grupo2->taDentro($cod_usuario,$codigo_grupo);
+		return $resultado;
 	}
 
 }

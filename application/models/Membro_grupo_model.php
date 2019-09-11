@@ -17,9 +17,11 @@ class Membro_grupo_model extends CI_Model{
 	}
 
 	public function taDentro($codigo_user){
-		$this->db->from("membro_grupo");
+		$this->db->select("count(*)");
+		//$this->db->from("membro_grupo");
 		$this->db->where('cod_usuario',$_SESSION['usuario_logado']['cod_usuario']);
-		$this->db->where('cod_grupo',$grupo->cod_grupo);
-		return $this->db->select(count());
+		$this->db->where('cod_grupo',$this->grupo->cod_grupo);
+		return 	$this->db->get('membro_grupo');
+		
 	}
 }

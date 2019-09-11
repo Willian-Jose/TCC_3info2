@@ -17,29 +17,21 @@
 		<td>Inscreva-se</td>
 	</tr>
 	<?php 
-			$tamanho = count($teste)-1;
-			$tamanho2 = count($teste);
-			echo $tamanho;
-			echo $tamanho2; 
+			print_r($teste);
 			foreach ($grupos as $grupo) {
 				echo "<tr>";
 				echo "<td>$grupo->lugar</td>";
 				echo "<td>$grupo->regente</td>";
 				echo "<td>$grupo->dia_grupo</td>";
 				echo "<td>$grupo->materia_grupo</td>";
-				echo "<td>$grupo->desc_grupo</td>";
-				for ($i=0; $i <$tamanho2	; $i++) { 
-					print_r($teste[$i]['cod_grupo']); 
-					if ($teste[$i]['cod_grupo'] == $grupo->cod_grupo) {
-						echo "<td>".
-					"<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>Sair</a>";
-					}
-					if($tamanho2 == 0){
-						echo "<td>".
-					"<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>Entrar</a>";
-					}	
+				echo "<td>$grupo->desc_grupo</td>"; 
+				if ($vetor['entrada']==0) {
+					echo "<td>".
+					"<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>Entrar</a>"."</td>";
+				}else{
+					echo "<td>".
+					"<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>Sair</a>"."</td>";
 				}
-				
 				echo "</tr>";
 			}
 			

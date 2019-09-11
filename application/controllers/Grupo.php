@@ -15,6 +15,7 @@ class Grupo extends CI_Controller{
 	}
 
     public function index(){
+		$vetor['entrada'] = $this->grupo2->taDentro($_SESSION['usuario_logado']['cod_usuario']);
 		$vetor['teste'] = $this->grupo2->verificaParticipante($_SESSION['usuario_logado']['cod_usuario']);
 		//busca os dados do banco pela model
 		$resultado = $this->grupo->obterTodos();
@@ -28,6 +29,11 @@ class Grupo extends CI_Controller{
 		$this->grupo2->inserir($codigo_grupo, $codigo_user);
 		echo  $this->db->last_query();
 		redirect(site_url("grupo/index"));
+	}
+
+	public function Entrada_Saida($codigo_user){
+		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
+		$this->grupo2->taDentro($cod_usuario,$codigo_grupo);
 	}
 
 }

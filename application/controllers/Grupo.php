@@ -8,9 +8,9 @@ class Grupo extends CI_Controller{
 		$this->load->model("Membro_grupo_model", "grupo2");
 	}
 	
-	public function verificaEntrada(){
+	public function verificaEntrada($codigo_grupo){
     	$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
-    	$resultado = $this->grupo2->verificaParticipante($codigo_user);
+    	$resultado = $this->grupo2->verificaParticipante($codigo_user,$codigo_grupo);
     	return $resultado;	
 	}
 
@@ -40,9 +40,8 @@ class Grupo extends CI_Controller{
 	}
 
 	public function detalhe($codigo_grupo){ 
-		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
-		$membro = $this->grupo2->verificaEntrada($codigo_grupo,$codigo_user);
-		$vetor['']
+		$resultado = $this->verificaEntrada($codigo_grupo);
+		$vetor['grupo'] = $resultado;
 		$this->load->view("grupo/detalhe_grupo",$vetor);
 	}
 

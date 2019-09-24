@@ -13,7 +13,7 @@ class Membro_grupo_model extends CI_Model{
 
 	public function verificaParticipante($codigo_user,$cod_grupo){
 		$this->db->where('cod_usuario', $codigo_user);
-		$this->db->where('cod_grupo', $cod_grupo)
+		$this->db->where('cod_grupo', $cod_grupo);
 		return $this->db->get('membro_grupo')->result();
 	}
 

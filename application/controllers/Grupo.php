@@ -15,8 +15,10 @@ class Grupo extends CI_Controller{
 	}
 
     public function index(){
-		$vetor['entrada'] = $this->grupo2->taDentro($_SESSION['usuario_logado']['cod_usuario']);
-		$vetor['teste'] = $this->grupo2->verificaParticipante($_SESSION['usuario_logado']['cod_usuario']);
+		//$vetor['entrada'] = $this->grupo2->taDentro($_SESSION['usuario_logado']['cod_usuario']);
+		//$vetor['teste'] = $this->grupo2->verificaParticipante($_SESSION['usuario_logado']['cod_usuario']);
+		//echo  $this->db->last_query();
+		//print_r($vetor['entrada']);
 		//busca os dados do banco pela model
 		$resultado = $this->grupo->obterTodos();
 		$vetor['grupos'] = $resultado;
@@ -27,7 +29,7 @@ class Grupo extends CI_Controller{
 	public function entrar($codigo_grupo){
 		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
 		$this->grupo2->inserir($codigo_grupo, $codigo_user);
-		echo  $this->db->last_query();
+		//echo  $this->db->last_query();
 		redirect(site_url("grupo/index"));
 	}
 
@@ -35,6 +37,11 @@ class Grupo extends CI_Controller{
 		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
 		$resultado = $this->grupo2->taDentro($cod_usuario,$codigo_grupo);
 		return $resultado;
+	}
+
+	public function detalhe($codigo_grupo){
+
+		$this->load->view("grupo/detalhe_grupo",$vetor);
 	}
 
 }

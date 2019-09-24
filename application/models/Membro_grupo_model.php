@@ -13,15 +13,16 @@ class Membro_grupo_model extends CI_Model{
 
 	public function verificaParticipante($codigo_user){
 		$this->db->where('cod_usuario', $codigo_user);
-		return $this->db->get('membro_grupo')->result_array();
+		return $this->db->get('membro_grupo')->result();
 	}
 
 	public function taDentro($codigo_user){
-		$this->db->select("count(*)");
+		//$this->db->select("count(*)");
+		$this->db->select('count(*)');
 		//$this->db->from("membro_grupo");
-		$this->db->where('cod_usuario',$_SESSION['usuario_logado']['cod_usuario']);
 		$this->db->where('cod_grupo',$this->grupo->cod_grupo);
-		return 	$this->db->get('membro_grupo');
+		$this->db->where('cod_usuario',$codigo_user);
+		return 	$this->db->get('membro_grupo')->result();
 		
 	}
 }

@@ -24,13 +24,8 @@
 				echo "<td>$grupo->dia_grupo</td>";
 				echo "<td>$grupo->materia_grupo</td>";
 				echo "<td>$grupo->desc_grupo</td>"; 
-				if ($vetor['entrada']== NULL) {
-					echo "<td>".
-					"<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>Entrar</a>"."</td>";
-				}else{
-					echo "<td>".
-					"<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>Sair</a>"."</td>";
-				}
+				echo "<td>".
+					"<a href='". site_url("grupo2/detalhe/$grupo->cod_grupo") ."'>Ver detalhes</a>"."</td>";
 				echo "</tr>";
 			}
 			

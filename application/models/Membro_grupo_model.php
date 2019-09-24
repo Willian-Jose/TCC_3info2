@@ -11,8 +11,9 @@ class Membro_grupo_model extends CI_Model{
 		$this->db->insert("membro_grupo", $this);
 	}
 
-	public function verificaParticipante($codigo_user){
+	public function verificaParticipante($codigo_user,$cod_grupo){
 		$this->db->where('cod_usuario', $codigo_user);
+		$this->db->where('cod_grupo', $cod_grupo)
 		return $this->db->get('membro_grupo')->result();
 	}
 

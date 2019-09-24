@@ -39,8 +39,10 @@ class Grupo extends CI_Controller{
 		return $resultado;
 	}
 
-	public function detalhe($codigo_grupo){
-
+	public function detalhe($codigo_grupo){ 
+		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
+		$membro = $this->grupo2->verificaEntrada($codigo_grupo,$codigo_user);
+		$vetor['']
 		$this->load->view("grupo/detalhe_grupo",$vetor);
 	}
 

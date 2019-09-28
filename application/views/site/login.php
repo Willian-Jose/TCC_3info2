@@ -14,7 +14,7 @@
     <?php if($this->session->flashdata("danger")) : ?>
     <p class="alert alert-danger"><?= $this->session->flashdata("danger") ?></p>
     <?php endif ?>
-
+    <?php if(isset($mensagens)) echo $mensagens; ?>
 
 
     <h1>Login</h1>
@@ -45,7 +45,7 @@
 
 <h1>Cadastro</h1>
     <?php 
-    echo form_open("usuario/salvar");
+    echo form_open("usuario/autenticar");
     echo form_label("Nome", "nome");
     echo form_input(array(
         "name" => "nome",

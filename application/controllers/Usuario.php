@@ -7,17 +7,32 @@ class Usuario extends CI_Controller{
 		$this->load->model("usuario_model", "usuario");
 	}
 
-	public function salvar(){
+	//public function salvar(){
 		//recupera os dados da view
-		$nome = $this->input->post("nome");
-		$email = $this->input->post("email");
-		$senha = $this->input->post("senha");
+		//$nome = $this->input->post("nome");
+		//$email = $this->input->post("email");
+		//$senha = $this->input->post("senha");
 		//echo "$nome, $login, $senha";
 
-		$this->usuario->inserir();
+		//$this->usuario->inserir();
 		//redirect(site_url("usuario/index"));
-		redirect();
-	}	
+		//redirect();
+	//}
+	 public function autenticar() {
+		     $this->load->library('form_validation');
+		     $this->form_validation->set_rules('nome', 'Nome', 
+				  'required|min_length[5]|max_length[150]');
+		     $this->form_validation->set_rules('senha', 'Senha', 'required|min_length[6]|max_length[32]',
+				   array('required' => 'Você deve preencher a %s.'));
+		     $this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[30]|is_unique[usuario.email]');
+		     if ($this->form_validation->run() == FALSE) {
+		           $erros = array('mensagens' => validation_errors());
+		           $this->load->view('site/login', $erros);
+		     } else {
+				   $erros = array('mensagens' => 'Cadastrado!');
+				   $this->load->view('site/login', $erros);
+		     }
+		 }	
 
 	public function adicionar(){
 		//carrega uma view

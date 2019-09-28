@@ -15,10 +15,6 @@ class Grupo extends CI_Controller{
 	}
 
     public function index(){
-		//$vetor['entrada'] = $this->grupo2->taDentro($_SESSION['usuario_logado']['cod_usuario']);
-		//$vetor['teste'] = $this->grupo2->verificaParticipante($_SESSION['usuario_logado']['cod_usuario']);
-		//echo  $this->db->last_query();
-		//print_r($vetor['entrada']);
 		//busca os dados do banco pela model
 		$resultado = $this->grupo->obterTodos();
 		$vetor['grupos'] = $resultado;

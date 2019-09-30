@@ -7,17 +7,13 @@ class Usuario extends CI_Controller{
 		$this->load->model("usuario_model", "usuario");
 	}
 
-	//public function salvar(){
+	public function salvar(){
 		//recupera os dados da view
-		//$nome = $this->input->post("nome");
-		//$email = $this->input->post("email");
-		//$senha = $this->input->post("senha");
-		//echo "$nome, $login, $senha";
-
-		//$this->usuario->inserir();
-		//redirect(site_url("usuario/index"));
-		//redirect();
-	//}
+		$nome = $this->input->post("nome");
+		$email = $this->input->post("email");
+		$senha = $this->input->post("senha");
+		$this->usuario->inserir();
+	}
 	 public function autenticar() {
 		     $this->load->library('form_validation');
 		     $this->form_validation->set_rules('nome', 'Nome', 
@@ -30,7 +26,9 @@ class Usuario extends CI_Controller{
 		           $this->load->view('site/login', $erros);
 		     } else {
 				   $erros = array('mensagens' => 'Cadastrado!');
+				   $this->salvar();  
 				   $this->load->view('site/login', $erros);
+				   
 		     }
 		 }	
 

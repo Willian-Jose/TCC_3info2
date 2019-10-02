@@ -11,12 +11,12 @@ text-align: center;
 p {text-align: left;}
 
 body {
-	margin: 0;
-	padding: 0;
-	background: #4682B4;
-	text-align: left;
-	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-	font-size: 13px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  background: #4682B4;
 }
 *
 {
@@ -50,25 +50,25 @@ float:left;
 
 
 #header ul {
-	padding: 0px;
-	list-style-type: none;
-	height:21px;
-	text-align:center;
-	height:85px;
-	overflow:hidden;
+  padding: 0px;
+  list-style-type: none;
+  height:21px;
+  text-align:center;
+  height:85px;
+  overflow:hidden;
 }
 #header ul li , #header ul li a, #header ul li a:visited{
-	display:block;
-	float:left;
-	margin: 0px;
-	text-align:center;
-	line-height:72px;
-	width:133px;
-	color:#FFFFFF;
+  display:block;
+  float:left;
+  margin: 0px;
+  text-align:center;
+  line-height:72px;
+  width:133px;
+  color:#FFFFFF;
 
-	font-size:16px;
-	font-weight:bold;
-	text-decoration:none;
+  font-size:16px;
+  font-weight:bold;
+  text-decoration:none;
 }
 
 #header ul li a:hover{
@@ -106,7 +106,6 @@ color:#000000;
 padding-left:25px;
 margin-right:25px;
 }
-
 #main .main_body
 {
 line-height:19px;
@@ -133,32 +132,33 @@ padding-right:20px;
   } 
 
 #footer {
-display:block;
-width: 921px;
-height:74px;
-background: url(footer.png) no-repeat;
-text-align:right;
-font-size:9px;
-line-height:75px;
+  margin: 0 auto 0 auto; 
+  margin-top:10px;
+  display: block; 
+  height:auto;
+  position: relative; 
+  overflow: hidden; 
+  width: 60%;
+}
+@media (max-width: 750px){
+  #footer{
+    width: 450px;
+  }
+}
+#footer li{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
 }
 
-#footer p{
-padding-right:20px;
-text-align:right;
-}
 
-#footer, #footer a, #footer a:visited{
-color:#FFFFFF;
-}
 
-#footer a:hover{
-text-decoration:none;
-color:#CCCCCC;
-}
 
 .calendario{
-	width: 33%;
-	padding-left: 2%
+  width: 33%;
+  padding-left: 2%
 }
   @media (max-width: 750px){
     .calendario{
@@ -278,7 +278,7 @@ ul {
   background-color: #333;
 }
 
-li {
+#page li {
   float: left;
 }
 
@@ -301,9 +301,7 @@ li a:hover {
   border-radius: 10px;
 }
 .borda{
-  border-radius: 7px;
-  border: 2px solid black
-}
+  border: 1px solid black;}
 /*Perfil*/
 * {
   box-sizing: border-box;
@@ -339,4 +337,115 @@ li a:hover {
   float: left;
   width: 45%;
   padding: 15px;
+}
+
+.gps{
+  width: 30%;
+}
+
+.cor{
+  margin: 0 auto 0 auto; 
+  margin-top:10px;
+  margin-bottom: 10px;
+  display: block; 
+  height:43px;
+  position: relative; 
+  overflow: hidden; 
+  width: 60%;
+}
+@media (max-width: 750px){
+  .cor{
+    width: 450px;
+  }
+}
+.cor li{
+  display: block;
+  color: white;
+  text-align: center;
+  float: left;
+  padding:0px;
+  text-decoration: none;
+}
+
+.face{
+  display: block;
+  background-color: #3B5999;
+  width: 45px;
+  height: 45px;
+  border-radius: 5px;
+  position: relative;
+}
+.face:before{
+  content: '';
+  display: block;
+  width: 12.5px;
+  height: 40px;
+  border-radius: 10px 0 0 0;
+  border: 6.5px solid #FFFFFF;
+  border-right: none;
+  border-bottom: none;
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+.face:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 17.5px;
+  height: 5px;
+  bottom: 20px;
+  right: 10px;
+  background-color: #FFFFFF;
+}
+div.poker{
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: gold;
+  position: relative;
+  border-radius: 25px;
+  padding-top: 20px;
+}
+div.poker:after, div.poker:before{
+  content: '';
+  display: block;
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 4px;
+  background-color: black;
+  position: absolute;
+  top: 15px;
+}
+div.poker:after{
+  left: 15px;
+}
+div.poker:before{
+  right: 15px;
+}
+div.boca{
+  display: block;
+  width: 20px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: black;
+  position: absolute;
+  top: 30px;
+  left: 15px;
+}
+.tabela_gp table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.tabela_gp td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+.tabela_gp tr:nth-child(even) {
+  background-color: #dddddd;
 }

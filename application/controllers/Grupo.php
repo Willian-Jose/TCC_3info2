@@ -19,7 +19,9 @@ class Grupo extends CI_Controller{
 		$resultado = $this->grupo->obterTodos();
 		$vetor['grupos'] = $resultado;
 		$vetor['titulo'] = "Grupos de Estudo";
-		$this->load->view("grupo/lista_grupo", $vetor);	
+		$this->load->view("site/cabecalho");
+		$this->load->view("grupo/grupo-teste", $vetor);
+		$this->load->view("site/rodape");	
 	}
 
 	public function entrar($codigo_grupo){
@@ -38,7 +40,9 @@ class Grupo extends CI_Controller{
 	public function detalhe($codigo_grupo){ 
 		$resultado = $this->verificaEntrada($codigo_grupo);
 		$vetor['grupo'] = $resultado;
+		$this->load->view("site/cabecalho");
 		$this->load->view("grupo/detalhe_grupo",$vetor);
+		$this->load->view("site/rodape");	
 	}
 
 }

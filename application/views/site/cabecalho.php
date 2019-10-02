@@ -5,8 +5,10 @@
 	<link rel="stylesheet" type="text/css" href="<?= base_url("bootstrap/css/style.css") ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Teste grupos de estudo</title>
+<link rel="shortcut icon" href="../img/logo.png"/>
 </head>
 <body>
+
 	<div id="page">
 		
 		<nav>

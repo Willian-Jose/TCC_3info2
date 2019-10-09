@@ -20,6 +20,11 @@ class Login extends CI_Controller{
         }
     }
 
+    public function logout(){
+        $this->session->sess_destroy();
+        redirect('/');
+    }
+
     //public function home(){
         //$data['level'] = $this->session->userdata('level_id');
         //$data['nome'] = $this->session->userdata('nome');

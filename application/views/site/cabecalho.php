@@ -19,7 +19,7 @@ if($this->session->userdata("usuario_logado")==null){
 	        <div">
 	        	<img class="logo" src="<?= base_url("bootstrap/img/logo.png")?>">
 	            <ul>
-	           	   	<li><a href="index.php">Início</a></li>
+	           	   	<li><?= anchor('Login/home', 'Início', 'title="Grupos"'); ?></li>
 	               	<li><a href="atividades.php">Atividades</a></li>
 	                <li><?= anchor('Grupo/index', 'Grupos', 'title="Grupos"'); ?></li>
 	                <li><a href="perfil.php">Perfil</a></li>

@@ -1,7 +1,7 @@
 
 	<div class="main_body">
 		<div class="main_top">
-			<h1>Detalhe</h1>
+			<h1>Detalhe do grupo</h1>
 		</div>
 		<section class="informacao-perfil">
 		<div class="infos"><b>Responsavel do Grupo: </b></div>

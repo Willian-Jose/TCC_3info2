@@ -14,6 +14,11 @@ class Grupo extends CI_Controller{
     	return $resultado;	
 	}
 
+	public function verificaDetalhe($codigo_grupo){
+		$resultado = $this->grupo->grupoDetalhe($codigo_grupo);
+		return $resultado;
+	}
+
     public function index(){
 		//busca os dados do banco pela model
 		$resultado = $this->grupo->obterTodos();
@@ -38,10 +43,11 @@ class Grupo extends CI_Controller{
 	}
 
 	public function detalhe($codigo_grupo){ 
+		$grupo_detalhe = $this->verificaDetalhe($codigo_grupo);
 		$resultado = $this->verificaEntrada($codigo_grupo);
 		$vetor['grupo'] = $resultado;
 		$this->load->view("site/cabecalho");
-		$this->load->view("grupo/detalhe_grupo",$vetor);
+		$this->load->view("grupo/detalhe_grupo",$vetor);	
 		$this->load->view("site/rodape");	
 	}
 

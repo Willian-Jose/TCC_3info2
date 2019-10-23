@@ -12,5 +12,10 @@ class Grupo_model extends CI_Model{
 	public function obterTodos(){
 		return $this->db->get("grupo")->result();	
 	}
+
+	public function grupoDetalhe($cod_grupo){
+		$this->db->where('cod_grupo', $cod_grupo);
+		return $this->db->get('grupo')->result();
+	}
 	
 }

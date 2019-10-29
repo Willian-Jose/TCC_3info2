@@ -45,7 +45,8 @@ class Grupo extends CI_Controller{
 	public function detalhe($codigo_grupo){ 
 		$grupo_detalhe = $this->verificaDetalhe($codigo_grupo);
 		$resultado = $this->verificaEntrada($codigo_grupo);
-		$vetor['grupo'] = $resultado;
+		$vetor['teste'] = $resultado;
+		$vetor['grupos'] = $grupo_detalhe;
 		$this->load->view("site/cabecalho");
 		$this->load->view("grupo/detalhe_grupo",$vetor);	
 		$this->load->view("site/rodape");	

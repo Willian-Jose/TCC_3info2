@@ -11,12 +11,12 @@ text-align: center;
 p {text-align: left;}
 
 body {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  font-size: 13px;
+	margin: 0;
+	padding: 0;
   background: #4682B4;
+	text-align: left;
+	font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+	font-size: 13px;
 }
 *
 {
@@ -50,25 +50,25 @@ float:left;
 
 
 #header ul {
-  padding: 0px;
-  list-style-type: none;
-  height:21px;
-  text-align:center;
-  height:85px;
-  overflow:hidden;
+	padding: 0px;
+	list-style-type: none;
+	height:21px;
+	text-align:center;
+	height:85px;
+	overflow:hidden;
 }
 #header ul li , #header ul li a, #header ul li a:visited{
-  display:block;
-  float:left;
-  margin: 0px;
-  text-align:center;
-  line-height:72px;
-  width:133px;
-  color:#FFFFFF;
+	display:block;
+	float:left;
+	margin: 0px;
+	text-align:center;
+	line-height:72px;
+	width:133px;
+	color:#FFFFFF;
 
-  font-size:16px;
-  font-weight:bold;
-  text-decoration:none;
+	font-size:16px;
+	font-weight:bold;
+	text-decoration:none;
 }
 
 #header ul li a:hover{
@@ -157,8 +157,8 @@ padding-right:20px;
 
 
 .calendario{
-  width: 33%;
-  padding-left: 2%
+	width: 33%;
+	padding-left: 2%
 }
   @media (max-width: 750px){
     .calendario{
@@ -343,30 +343,6 @@ li a:hover {
   width: 30%;
 }
 
-.cor{
-  margin: 0 auto 0 auto; 
-  margin-top:10px;
-  margin-bottom: 10px;
-  display: block; 
-  height:43px;
-  position: relative; 
-  overflow: hidden; 
-  width: 60%;
-}
-@media (max-width: 750px){
-  .cor{
-    width: 450px;
-  }
-}
-.cor li{
-  display: block;
-  color: white;
-  text-align: center;
-  float: left;
-  padding:0px;
-  text-decoration: none;
-}
-
 .face{
   display: block;
   background-color: #3B5999;
@@ -440,12 +416,40 @@ div.boca{
   width: 100%;
 }
 
-.tabela_gp td, th {
-  border: 1px solid #dddddd;
+/*.tabela_gp td, th {
+ 
   text-align: left;
   padding: 8px;
+  max-width: 100%;
+}*/
+
+@media screen and (min-width: 800px){
+  .tabela_gp td, th {
+ 
+    text-align: left;
+    padding: 8px;
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 800px){
+  .tabela_gp td, th {
+ 
+    text-align: left;
+    padding: 3px;
+    max-width: 90%;
+  }
 }
 
 .tabela_gp tr:nth-child(even) {
   background-color: #dddddd;
+}
+.imgindex{
+  width:79%;
+  margin-left: 10%;
+  margin-bottom: 15px;
+}
+.img_gp{
+  width:40%;
+  margin-left: 10%;
+  margin-bottom: 15px;
 }

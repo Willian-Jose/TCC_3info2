@@ -20,7 +20,10 @@ class User extends CI_Controller{
 
 		$crud->callback_before_insert(array($this,"remove_confirma"));
 		$form = $crud->render();
+		//$this->load->view("site/cabecalho");
 		$this->load->view("crud/index", $form,);
+		//$this->load->view("site/rodape");	
+
 	}
 
 	public function remove_confirma($post_array){

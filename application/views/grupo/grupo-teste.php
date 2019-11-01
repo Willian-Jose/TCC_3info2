@@ -23,7 +23,7 @@
 				echo "<td>$grupo->materia_grupo</td>";
 				echo "<td>$grupo->desc_grupo</td>"; 
 				echo "<td>".
-					"<a href='". site_url("grupo/detalhe/$grupo->cod_grupo") ."'>Ver detalhes</a>"."</td>";
+					"<a href='". site_url("grupo/detalhe/$grupo->cod_grupo") ."'><img width='20' height='20' src='".base_url('bootstrap/open-iconic/svg/account-login.svg')."'></a>"."</td>";
 				echo "</tr>";
 			}
 			

@@ -5,7 +5,6 @@ if($this->session->userdata("usuario_logado")==null){
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" href="<?= base_url("bootstrap/css/bootstrap.css") ?>">
 	<link rel="stylesheet" type="text/css" href="<?= base_url("bootstrap/css/style.css") ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Teste grupos de estudo</title>
@@ -20,10 +19,10 @@ if($this->session->userdata("usuario_logado")==null){
 	        	<img class="logo" src="<?= base_url("bootstrap/img/logo.png")?>">
 	            <ul>
 	           	   	<li><?= anchor('Login/home', 'Início', 'title="Grupos"'); ?></li>
-	               	<li><a href="atividades.php">Atividades</a></li>
 	                <li><?= anchor('Grupo/index', 'Grupos', 'title="Grupos"'); ?></li>
-	                <li><a href="perfil.php">Perfil</a></li>
-	                <li><a href="cadastrar.php">Cadastro</a></li>
+					<li><?= anchor('Usuario/perfil', 'Perfil', 'title="Perfil"'); ?></li>
+
+	                <!-- <li><a href="cadastrar.php">Cadastro</a></li>  -->
 					<?php
 					if (isset($_SESSION)) {
 					?>

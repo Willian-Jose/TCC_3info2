@@ -45,5 +45,10 @@ class Usuario_model extends CI_Model{
 		$usuario = $this->db->get("usuario")->row_array();
 		return $usuario;
 	}
+
+	public function perfil($cod_usuario){
+		$this->db->where("cod_usuario", $cod_usuario);
+		return $this->db->get("usuario")->result();
+	}
 }
 ?>

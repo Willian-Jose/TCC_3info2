@@ -12,7 +12,7 @@ class Login extends CI_Controller{
         $usuario = $this->usuario->LogarUsuarios($email, $senha);
         if ($usuario) {
             $this->session->set_userdata("usuario_logado", $usuario);
-            $this->session->set_flashdata("success", "Logado com sucesso!");
+           // $this->session->set_flashdata("success", "Logado com sucesso!");
             $this->load->view('site/index');
         } else {
             $this->session->set_flashdata("danger", "Usuario ou senha inválidos");

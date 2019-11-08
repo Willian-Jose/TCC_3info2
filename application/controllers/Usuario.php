@@ -61,6 +61,13 @@ class Usuario extends CI_Controller{
 		$this->usuario->update();
 		redirect(site_url("usuario/index"));
 	}
+
+	public function perfil(){
+		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
+		$resultado = $this->usuario->perfil($codigo_user);
+		$this->load->view("usuario/perfil", $resultado);
+
+	}
 }
 
 ?>

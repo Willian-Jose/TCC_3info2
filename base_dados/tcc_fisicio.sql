@@ -10,24 +10,6 @@ cod_tipo int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 desc_tipo varchar(30)
 );
 
-CREATE TABLE disciplina (
-cod_disciplina int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-nome_disciplina varchar(30) NOT NULL,
-desc_disciplina varchar(30)
-);
-
-CREATE TABLE atividade (
-cod_atividade int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-cod_usuario int,
-cod_disciplina int,
-desc_atividade varchar(30) NOT NULL,
-materia_atividade varchar(30) NOT NULL,
-data_cadastro varchar(10) NOT NULL,
-data_entrega varchar(10) NOT NULL,
-CONSTRAINT fk_atividades_cod_usuario FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario),
-CONSTRAINT fk_atividades_cod_disciplina FOREIGN KEY(cod_disciplina) REFERENCES disciplina (cod_disciplina)
-);
-
 CREATE TABLE curso_tecnico (
 cod_curso int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 desc_curso varchar(30),
@@ -49,13 +31,6 @@ cod_curso int,
 nome_turma varchar(30) NOT NULL,
 ano varchar(4) NOT NULL,
 CONSTRAINT fk_turma_cod_curso FOREIGN KEY(cod_curso) REFERENCES curso_tecnico (cod_curso)
-);
-
-CREATE TABLE disciplina_turma (
-cod_disciplina int,
-cod_turma int,
-CONSTRAINT fk_disciplina_turma_cod_disciplina FOREIGN KEY(cod_disciplina) REFERENCES disciplina (cod_disciplina),
-CONSTRAINT fk_disciplina_turma_cod_turma FOREIGN KEY(cod_turma) REFERENCES turma (cod_turma)
 );
 
 CREATE TABLE turma_aluno (

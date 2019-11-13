@@ -24,6 +24,13 @@ class Membro_grupo_model extends CI_Model{
 		$this->db->where('cod_grupo',$this->grupo->cod_grupo);
 		$this->db->where('cod_usuario',$codigo_user);
 		return 	$this->db->get('membro_grupo')->result();
-		
+	}
+
+	public function saida($cod_grupo){
+		$codigo_user = $_SESSION['usuario_logado']['cod_usuario'];
+		$codigo_grupo = $cod_grupo;
+		$this->db->where('cod_grupo', $cod_grupo);
+		$this->db->where('cod_usuario', $codigo_user);
+		$this->db->delete('membro_grupo');
 	}
 }

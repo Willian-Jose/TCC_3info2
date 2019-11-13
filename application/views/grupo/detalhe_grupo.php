@@ -15,10 +15,22 @@
 				echo "<td>$grupo->regente</td>";
 				echo "<td>$grupo->dia_grupo</td>";
 				echo "<td>$grupo->materia_grupo</td>"; 
-				echo "</tr>";
 			}
-			
 	?>
-		</section>
-	</div>
+	<?php 
 	
+	if($testes == NULL){
+		echo "<a href='". site_url("grupo/entrar/$grupo->cod_grupo") ."'>
+				<img width='20' height='20' 
+				src='".base_url('bootstrap/open-iconic/svg/account-login.svg')."'>
+				</a>";
+				}else{
+				echo "<a href='". site_url("grupo/sair/$grupo->cod_grupo") ."'>
+				<img width='20' height='20' 
+				src='".base_url('bootstrap/open-iconic/svg/account-login.svg')."'>
+				</a>";
+				}
+				
+		?>
+		</section>
+		</div>

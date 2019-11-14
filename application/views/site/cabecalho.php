@@ -20,9 +20,7 @@ if($this->session->userdata("usuario_logado")==null){
 	            <ul>
 	           	   	<li><?= anchor('Login/home', 'Início', 'title="Grupos"'); ?></li>
 	                <li><?= anchor('Grupo/index', 'Grupos', 'title="Grupos"'); ?></li>
-					<li><?= anchor('Usuario/perfil', 'Perfil', 'title="Perfil"'); ?></li>
-
-	                <!-- <li><a href="cadastrar.php">Cadastro</a></li>  -->
+					<li><?= anchor('Usuario/perfil', 'Perfil', 'title="Perfil"'); ?></li> 	
 					<?php
 					if (isset($_SESSION)) {
 					?>

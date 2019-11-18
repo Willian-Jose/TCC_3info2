@@ -19,6 +19,16 @@ if($this->session->userdata("usuario_logado")==null){
 	        	<img class="logo" src="<?= base_url("bootstrap/img/logo.png")?>">
 	            <ul>
 	           	   	<li><?= anchor('Login/home', 'Início', 'title="Inicio"'); ?></li>
+					<?php if($_SESSION['usuario_logado']['nivel'] == 2){ ?>
+						<li><?= anchor('Grupo/index', 'Cadastro de Grupos', 'title="Grupos"'); ?></li>
+					<?php
+					}
+					?>
+					<?php if($_SESSION['usuario_logado']['nivel'] == 3){ ?>
+						<li><?= anchor('User/index', 'Gerência de Usuários', 'title="Grupos"'); ?></li>
+					<?php
+					}
+					?>
 	                <li><?= anchor('Grupo/index', 'Grupos', 'title="Grupos"'); ?></li>
 					<li><?= anchor('Usuario/perfil', 'Perfil', 'title="Perfil"'); ?></li> 	
 					<?php

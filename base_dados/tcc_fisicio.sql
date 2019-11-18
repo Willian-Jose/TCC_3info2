@@ -2,7 +2,8 @@ CREATE TABLE usuario (
 cod_usuario int PRIMARY KEY NOT NULL AUTO_INCREMENT,
 nome varchar(150) NOT NULL,
 email varchar(30) NOT NULL,
-senha varchar(30) NOT NULL
+senha varchar(32) NOT NULL,
+nivel INT(1) UNSIGNED NOT NULL DEFAULT '1'
 );
 
 CREATE TABLE tip_user (
@@ -44,7 +45,7 @@ CREATE TABLE tipo_usuario (
 cod_tipo int,
 cod_usuario int,
 CONSTRAINT fk_tipo_usuario_cod_tipo FOREIGN KEY(cod_tipo) REFERENCES tip_user (cod_tipo),
-CONSTRAINT fk_tipo_usuario_cod_usuario FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario) ON DELETE CASCADE;
+CONSTRAINT fk_tipo_usuario_cod_usuario FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE membro_grupo (
@@ -53,5 +54,3 @@ cod_grupo int,
 CONSTRAINT fk_membro_grupo_cod_usuario FOREIGN KEY(cod_usuario) REFERENCES usuario (cod_usuario),
 CONSTRAINT fk_membro_grupo_cod_grupo FOREIGN KEY(cod_grupo) REFERENCES grupo (cod_grupo)
 );
-
-

@@ -5,14 +5,14 @@ class User extends CI_Controller{
 		$crud = new Grocery_CRUD();
 		$crud->set_table("usuario");
 		$crud->set_subject("Usuario");
-		$crud->fields("nome","email","senha","confirma");
+		$crud->fields("nome","email","senha","nivel","confirma");
 		//validação dos dados 
 		$crud->unique_fields("email");
 		$crud->set_rules("confirma","Confirma Senha", "matches[senha]");
 		$crud->set_rules("email","Email", "valid_email['email']");
 
 		$crud->required_fields("nome", "email", "senha","confirma");
-		$crud->edit_fields("nome","senha");
+		$crud->edit_fields("nome","senha","nivel");
 		$crud->field_type("senha","password");
 		$crud->field_type("confirma","password");
 		$crud->display_as("confirma","Confirmar Senha");

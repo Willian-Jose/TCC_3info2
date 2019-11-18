@@ -24,9 +24,6 @@ INSERT INTO grupo (lugar,regente,dia_grupo,materia_grupo,desc_grupo) values
 ('Sala A-12','Marcelo Diana','01/05/2018','História','Filme'),
 ('Sala B-5','Daniel Strey','03/05/2019','Projeto Integrador','Inserir Banco de Dados');
 
-INSERT INTO disciplina (nome_disciplina) values
-('Artes'),('Matemática'),('Língua Portuguesa'),('Projeto Integrador'),
-('História'),('Geografia'),('Biologia'),('Banco de dados'),('Programação II'),('Engenharia de Software');
 
 INSERT INTO curso_tecnico(nome_curso) values 
 ('Técnico em Informátcia'),('Técnico em Agropecuária'),('Técnico em Química');

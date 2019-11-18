@@ -6,6 +6,7 @@ class Usuario_model extends CI_Model{
 	var $nome;
 	var $email;
 	var $senha;
+	var $nivel = 1;
 
 
 	public function inserir(){
